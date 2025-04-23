@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .marquee-container {
+    mask: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+    -webkit-mask: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+  }
+
+  .marquee-content {
+    --marquee-duration: 40s;
+    --marquee-item-width: 200px;
+    animation: marquee var(--marquee-duration) linear infinite;
+    min-width: max-content;
+  }
+
+  .marquee-content-reverse {
+    --marquee-duration: 40s;
+    --marquee-item-width: 200px;
+    animation: marquee-reverse var(--marquee-duration) linear infinite;
+    min-width: max-content;
+  }
+
+  .marquee-content > *,
+  .marquee-content-reverse > * {
+    --marquee-item-offset: max(
+      calc(var(--marquee-item-width) * var(--marquee-items)),
+      calc(100% + var(--marquee-item-width))
+    );
+    --marquee-delay: calc(
+      var(--marquee-duration) / var(--marquee-items) * 
+      (var(--marquee-items) - var(--marquee-item-index)) * -1
+    );
+    transform: translateX(var(--marquee-item-offset));
+    animation: go var(--marquee-duration) linear infinite;
+    animation-delay: var(--marquee-delay);
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% - var(--marquee-item-width))); }
+  }
+
+  @keyframes marquee-reverse {
+    0% { transform: translateX(calc(-100% - var(--marquee-item-width))); }
+    100% { transform: translateX(0); }
+  }
+
+  @keyframes go {
+    100% { transform: translateX(calc(var(--marquee-item-offset) * -1)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-container {
+      mask: none;
+      -webkit-mask: none;
+    }
+    
+    .animate-marquee,
+    .animate-marquee-reverse,
+    .animate-go {
+      animation-play-state: paused;
+    }
+  }
+} 
