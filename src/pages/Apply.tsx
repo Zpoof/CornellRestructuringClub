@@ -1,5 +1,4 @@
 import React from 'react';
-import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 const CustomForm = ({ status, message, onValidated }) => {
   const [email, setEmail] = React.useState('');
@@ -78,7 +77,10 @@ const Apply = () => {
 
         {/* Application Form Section */}
         <div className="max-w-4xl mx-auto mb-16 bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl text-center font-semibold mb-6">Application Form</h2>
+        <h2 className="text-2xl font-semibold mb-4">Join our Mailing List</h2>
+          <p className="text-gray-600 mb-6">
+            Stay updated on recruitment timelines and club events.
+          </p>
           <div className="aspect-[4/3] w-full">
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSeDHgSmI9m9dx-jSWC3jVPGNpMd6x5LTC6kJllsFzSRHDU2Bg/viewform?usp=header"
@@ -91,7 +93,6 @@ const Apply = () => {
             </iframe>
           </div>
         </div>
-
       </div>
     </div>
   );
