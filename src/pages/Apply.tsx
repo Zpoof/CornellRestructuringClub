@@ -92,23 +92,6 @@ const Apply = () => {
           </div>
         </div>
 
-        {/* Mailing List Section - Centered Below */}
-        <div className="max-w-2xl mx-auto text-center bg-gray-50 p-8 rounded-lg">
-          <h2 className="text-2xl font-semibold mb-4">Join our Mailing List</h2>
-          <p className="text-gray-600 mb-6">
-            Stay updated on recruitment timelines and club events.
-          </p>
-          <MailchimpSubscribe
-            url={MAILCHIMP_URL}
-            render={({ subscribe, status, message }) => (
-              <CustomForm
-                status={status}
-                message={message}
-                onValidated={formData => subscribe(formData)}
-              />
-            )}
-          />
-        </div>
       </div>
     </div>
   );
