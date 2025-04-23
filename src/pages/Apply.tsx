@@ -78,10 +78,7 @@ const Apply = () => {
 
         {/* Application Form Section */}
         <div className="max-w-4xl mx-auto mb-16 bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl text-center font-semibold mb-6">Join our Mailing List</h2>
-          <p className="text-gray-600 mb-6 text-center">
-            Stay updated on recruitment timelines and club events.
-          </p>
+          <h2 className="text-2xl text-center font-semibold mb-6">Application Form</h2>
           <div className="aspect-[4/3] w-full">
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSeDHgSmI9m9dx-jSWC3jVPGNpMd6x5LTC6kJllsFzSRHDU2Bg/viewform?usp=header"
@@ -93,6 +90,24 @@ const Apply = () => {
               Loading…
             </iframe>
           </div>
+        </div>
+
+        {/* Mailing List Section - Centered Below */}
+        <div className="max-w-2xl mx-auto text-center bg-gray-50 p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4">Join our Mailing List</h2>
+          <p className="text-gray-600 mb-6">
+            Stay updated on recruitment timelines and club events.
+          </p>
+          <MailchimpSubscribe
+            url={MAILCHIMP_URL}
+            render={({ subscribe, status, message }) => (
+              <CustomForm
+                status={status}
+                message={message}
+                onValidated={formData => subscribe(formData)}
+              />
+            )}
+          />
         </div>
       </div>
     </div>

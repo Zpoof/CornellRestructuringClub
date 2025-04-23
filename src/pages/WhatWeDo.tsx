@@ -9,6 +9,7 @@ const WhatWeDo = () => {
     '/logos/image4.png',
     '/logos/image5.png',
     '/logos/image6.png',
+    '/logos/image14.png',
   ];
 
   const secondRowLogos = [
@@ -18,6 +19,8 @@ const WhatWeDo = () => {
     '/logos/image10.png',
     '/logos/image11.png',
     '/logos/image13.png',
+    '/logos/image15.png',
+    '/logos/image16.png',
   ];
 
   return (
