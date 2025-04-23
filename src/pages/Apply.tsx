@@ -77,8 +77,8 @@ const Apply = () => {
 
         {/* Application Form Section */}
         <div className="max-w-4xl mx-auto mb-16 bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-4">Join our Mailing List</h2>
-          <p className="text-gray-600 mb-6">
+        <h2 className="text-2xl font-semibold text-center mb-4">Join our Mailing List</h2>
+          <p className="text-gray-600 text-center mb-6">
             Stay updated on recruitment timelines and club events.
           </p>
           <div className="aspect-[4/3] w-full">
